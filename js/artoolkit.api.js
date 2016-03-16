@@ -418,7 +418,6 @@
 	 * checked.
 	 *
 	 * @param {number} markerUID	The unique identifier (UID) of the marker to query
-	 * @param {number} markerWidth	The width of the marker
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
@@ -433,7 +432,6 @@
 	 * a call to detectMarker, all marker information will be current. Marker transformations can then be 
 	 * checked.
 	 * @param {number} markerUID	The unique identifier (UID) of the marker to query
-	 * @param {number} markerWidth	The width of the marker
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
