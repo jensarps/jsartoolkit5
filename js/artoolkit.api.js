@@ -451,7 +451,7 @@
 
 		@param {Float64Array} transMat The 3x4 marker transformation matrix.
 		@param {Float64Array} glMat The 4x4 GL transformation matrix.
-		@param {number} scale The scale for the transform.
+		@param {number} [scale] The scale for the transform.
 	*/ 
 	ARController.prototype.transMatToGLMat = function(transMat, glMat, scale) {
 		glMat[0 + 0*4] = transMat[0]; // R1C1
