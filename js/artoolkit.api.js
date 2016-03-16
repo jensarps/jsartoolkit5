@@ -975,6 +975,11 @@
 
 	// private
 
+	/**
+	 * //TODOC
+	 *
+	 * @private
+	 */
 	ARController.prototype._initialize = function() {
 		this.id = artoolkit.setup(this.canvas.width, this.canvas.height, this.cameraParam.id);
 
@@ -1002,6 +1007,13 @@
 		}, 1);
 	};
 
+	/**
+	 * //TODOC
+	 *
+	 * @param image
+	 * @returns {boolean}
+	 * @private
+	 */
 	ARController.prototype._copyImageToHeap = function(image) {
 		if (!image) {
 			image = this.image;
@@ -1029,6 +1041,12 @@
 		return false;
 	};
 
+	/**
+	 * //TODOC
+	 * 
+	 * @param marker
+	 * @private
+	 */
 	ARController.prototype._debugMarker = function(marker) {
 		var vertex, pos;
 		vertex = marker.vertex;
