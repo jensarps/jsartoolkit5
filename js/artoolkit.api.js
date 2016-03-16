@@ -388,8 +388,8 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatSquare = function(markerIndex, markerWidth, dst) {
-		artoolkit.getTransMatSquare(this.id, markerIndex, markerWidth);
+	ARController.prototype.getTransMatSquare = function(markerUID, markerWidth, dst) {
+		artoolkit.getTransMatSquare(this.id, markerUID, markerWidth);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -405,9 +405,9 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatSquareCont = function(markerIndex, markerWidth, previousMarkerTransform, dst) {
-		this.marker_transform_mat.set(previousMarkerTransform)
-		artoolkit.getTransMatSquareCont(this.id, markerIndex, markerWidth);
+	ARController.prototype.getTransMatSquareCont = function(markerUID, markerWidth, previousMarkerTransform, dst) {
+		this.marker_transform_mat.set(previousMarkerTransform);
+		artoolkit.getTransMatSquareCont(this.id, markerUID, markerWidth);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -422,8 +422,8 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatMultiSquare = function(multiMarkerId, dst) {
-		artoolkit.getTransMatMultiSquare(this.id, multiMarkerId);
+	ARController.prototype.getTransMatMultiSquare = function(markerUID, dst) {
+		artoolkit.getTransMatMultiSquare(this.id, markerUID);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -437,8 +437,8 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatMultiSquareRobust = function(multiMarkerId, dst) {
-		artoolkit.getTransMatMultiSquare(this.id, multiMarkerId);
+	ARController.prototype.getTransMatMultiSquareRobust = function(markerUID, dst) {
+		artoolkit.getTransMatMultiSquare(this.id, markerUID);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -489,7 +489,7 @@
         detected markers are possibly examined for some measure of goodness of match (e.g. by
         examining the match confidence value) and pose extraction.
 
-		@param {image} Image to be processed to detect markers.
+		@param {image} image to be processed to detect markers.
 		@return {number}     0 if the function proceeded without error, or a value less than 0 in case of error.
 			A result of 0 does not however, imply any markers were detected.
 	*/
