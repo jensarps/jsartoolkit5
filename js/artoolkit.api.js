@@ -775,7 +775,7 @@
 		suitable midpoint between the observed values for black
 		and white portions of the markers in the image.
 
-		@param {number}     thresh An integer in the range [0,255] (inclusive).
+		@param {number}     threshold An integer in the range [0,255] (inclusive).
 	*/
 	ARController.prototype.setThreshold = function(threshold) {
 		return artoolkit.setThreshold(this.id, threshold);
@@ -822,8 +822,8 @@
 			AR_TEMPLATE_MATCHING_MONO_AND_MATRIX
 			The default mode is AR_TEMPLATE_MATCHING_COLOR.
 	*/
-	ARController.prototype.setPatternDetectionMode = function(value) {
-		return artoolkit.setPatternDetectionMode(this.id, value);
+	ARController.prototype.setPatternDetectionMode = function(mode) {
+		return artoolkit.setPatternDetectionMode(this.id, mode);
 	};
 
 	/**
@@ -854,8 +854,8 @@
 	        AR_MATRIX_CODE_4x4_BCH_13_5_5
 	        The default mode is AR_MATRIX_CODE_3x3.
 	*/
-	ARController.prototype.setMatrixCodeType = function(value) {
-		return artoolkit.setMatrixCodeType(this.id, value);
+	ARController.prototype.setMatrixCodeType = function(type) {
+		return artoolkit.setMatrixCodeType(this.id, type);
 	};
 
 	/**
@@ -883,8 +883,8 @@
 			AR_LABELING_BLACK_REGION
 			The default mode is AR_LABELING_BLACK_REGION.
 	*/
-	ARController.prototype.setLabelingMode = function(value) {
-		return artoolkit.setLabelingMode(this.id, value);
+	ARController.prototype.setLabelingMode = function(mode) {
+		return artoolkit.setLabelingMode(this.id, mode);
 	};
 
 	/**
@@ -906,8 +906,8 @@
 	        If compatibility with ARToolKit verions 1.0 through 4.4 is required, this value
 	        must be 0.5.
 	 */
- 	ARController.prototype.setPattRatio = function(value) {
-		return artoolkit.setPattRatio(this.id, value);
+ 	ARController.prototype.setPattRatio = function(pattRatio) {
+		return artoolkit.setPattRatio(this.id, pattRatio);
 	};
 
 	/**
@@ -940,8 +940,8 @@
 			AR_IMAGE_PROC_FIELD_IMAGE
 			The default mode is AR_IMAGE_PROC_FRAME_IMAGE.
 	*/
-	ARController.prototype.setImageProcMode = function(value) {
-		return artoolkit.setImageProcMode(this.id, value);
+	ARController.prototype.setImageProcMode = function(mode) {
+		return artoolkit.setImageProcMode(this.id, mode);
 	};
 
 	/**
