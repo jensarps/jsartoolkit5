@@ -659,19 +659,20 @@
 	};
 
 	/**
-		Returns the Emscripten HEAP offset to the debug processing image used by ARToolKit.
-
-		@return {number} HEAP offset to the debug processing image.
-	*/
+	 * Returns the Emscripten HEAP offset to the debug processing image used by ARToolKit.
+	 *
+	 * @return {number} HEAP offset to the debug processing image.
+	 */
 	ARController.prototype.getProcessingImage = function() {
 		return artoolkit.getProcessingImage(this.id);
 	};
 
 	/**
-		Sets the logging level to use by ARToolKit.
-
-		@param mode
-	*/
+	 * Sets the logging level to use by ARToolKit.
+	 *
+	 * //TODOC
+	 * @param mode
+	 */
 	ARController.prototype.setLogLevel = function(mode) {
 		return artoolkit.setLogLevel(mode);
 	};
