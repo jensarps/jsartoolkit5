@@ -1596,7 +1596,7 @@
 		oReq.open('GET', url, true);
 		oReq.responseType = 'arraybuffer'; // blob arraybuffer
 
-		oReq.onload = function(oEvent) {
+		oReq.onload = function() {
 			// console.log('ajax done for ', url);
 			var arrayBuffer = oReq.response;
 			var byteArray = new Uint8Array(arrayBuffer);
