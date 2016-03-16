@@ -1278,7 +1278,7 @@
 		are set to be always in landscape configuration so that width is larger than height.
 
 		@param {object} configuration The configuration object.
-		@return {VideoElement} Returns the created video element.
+		@return {HTMLVideoElement} Returns the created video element.
 	*/
 	ARController.getUserMediaARController = function(configuration) {
 		var obj = {};
