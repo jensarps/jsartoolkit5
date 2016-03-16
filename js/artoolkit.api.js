@@ -110,7 +110,7 @@
 
 		If the debugSetup has been called, draws debug markers on the debug canvas.
 
-		@param {ImageElement | VideoElement} image The image to process [optional]. 
+		@param {HTMLImageElement|HTMLVideoElement} image The image to process [optional].
 	*/
 	ARController.prototype.process = function(image) {
 		this.detectMarker(image);
