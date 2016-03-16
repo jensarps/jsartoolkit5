@@ -665,7 +665,7 @@
 	*/
 	ARController.prototype.getProcessingImage = function() {
 		return artoolkit.getProcessingImage(this.id);
-	}
+	};
 
 	/**
 		Sets the logging level to use by ARToolKit.
