@@ -670,7 +670,7 @@
 	/**
 		Sets the logging level to use by ARToolKit.
 
-		@param 
+		@param mode
 	*/
 	ARController.prototype.setLogLevel = function(mode) {
 		return artoolkit.setLogLevel(mode);
