@@ -1043,7 +1043,7 @@
 
 	/**
 	 * //TODOC
-	 * 
+	 *
 	 * @param marker
 	 * @private
 	 */
@@ -1115,7 +1115,7 @@
 		width, height and facingMode attributes.
 
 		@param {object} configuration The configuration object.
-		@return {VideoElement} Returns the created video element.
+		@return {HTMLVideoElement} Returns the created video element.
 	*/
 	ARController.getUserMedia = function(configuration) {
 		var facing = configuration.facingMode || 'environment';
