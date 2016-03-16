@@ -557,6 +557,7 @@
 		A markerIndex of -1 is used to access the global custom marker.
 
 		@param {number} markerIndex The index of the marker to edit.
+	 	@param {*} vertexData
 	*/
 	ARController.prototype.setMarkerInfoVertex = function(markerIndex, vertexData) {
 		for (var i=0; i<vertexData.length; i++) {
