@@ -110,7 +110,7 @@
 
 		If the debugSetup has been called, draws debug markers on the debug canvas.
 
-		@param {ImageElement | VideoElement} image The image to process [optional]. 
+		@param {HTMLImageElement|HTMLVideoElement} [image] The image to process [optional].
 	*/
 	ARController.prototype.process = function(image) {
 		this.detectMarker(image);
@@ -227,7 +227,7 @@
 		and customizable marker widths.
 
 		@param {number} id ID of the pattern marker to track.
-		@param {number} markerWidth The width of the marker to track.
+		@param {number} [markerWidth] The width of the marker to track.
 		@return {Object} The marker tracking object.
 	*/
 	ARController.prototype.trackPatternMarkerId = function(id, markerWidth) {
@@ -255,7 +255,7 @@
 		and customizable marker widths.
 
 		@param {number} id ID of the barcode marker to track.
-		@param {number} markerWidth The width of the marker to track.
+		@param {number} [markerWidth] The width of the marker to track.
 		@return {Object} The marker tracking object.
 	*/
 	ARController.prototype.trackBarcodeMarkerId = function(id, markerWidth) {
@@ -388,8 +388,8 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatSquare = function(markerIndex, markerWidth, dst) {
-		artoolkit.getTransMatSquare(this.id, markerIndex, markerWidth);
+	ARController.prototype.getTransMatSquare = function(markerUID, markerWidth, dst) {
+		artoolkit.getTransMatSquare(this.id, markerUID, markerWidth);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -405,9 +405,9 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatSquareCont = function(markerIndex, markerWidth, previousMarkerTransform, dst) {
-		this.marker_transform_mat.set(previousMarkerTransform)
-		artoolkit.getTransMatSquareCont(this.id, markerIndex, markerWidth);
+	ARController.prototype.getTransMatSquareCont = function(markerUID, markerWidth, previousMarkerTransform, dst) {
+		this.marker_transform_mat.set(previousMarkerTransform);
+		artoolkit.getTransMatSquareCont(this.id, markerUID, markerWidth);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -422,8 +422,8 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatMultiSquare = function(multiMarkerId, dst) {
-		artoolkit.getTransMatMultiSquare(this.id, multiMarkerId);
+	ARController.prototype.getTransMatMultiSquare = function(markerUID, dst) {
+		artoolkit.getTransMatMultiSquare(this.id, markerUID);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -437,8 +437,8 @@
 	 * @param {Float64Array} dst	The float array to populate with the 3x4 marker transformation matrix
 	 * @return	{Float64Array} The dst array.
 	 */
-	ARController.prototype.getTransMatMultiSquareRobust = function(multiMarkerId, dst) {
-		artoolkit.getTransMatMultiSquare(this.id, multiMarkerId);
+	ARController.prototype.getTransMatMultiSquareRobust = function(markerUID, dst) {
+		artoolkit.getTransMatMultiSquare(this.id, markerUID);
 		dst.set(this.marker_transform_mat);
 		return dst;
 	};
@@ -451,7 +451,7 @@
 
 		@param {Float64Array} transMat The 3x4 marker transformation matrix.
 		@param {Float64Array} glMat The 4x4 GL transformation matrix.
-		@param {number} scale The scale for the transform.
+		@param {number} [scale] The scale for the transform.
 	*/ 
 	ARController.prototype.transMatToGLMat = function(transMat, glMat, scale) {
 		glMat[0 + 0*4] = transMat[0]; // R1C1
@@ -489,7 +489,7 @@
         detected markers are possibly examined for some measure of goodness of match (e.g. by
         examining the match confidence value) and pose extraction.
 
-		@param {image} Image to be processed to detect markers.
+		@param {image} image to be processed to detect markers.
 		@return {number}     0 if the function proceeded without error, or a value less than 0 in case of error.
 			A result of 0 does not however, imply any markers were detected.
 	*/
@@ -642,7 +642,7 @@
 	 * Enables or disables debug mode in the tracker. When enabled, a black and white debug
 	 * image is generated during marker detection. The debug image is useful for visualising
 	 * the binarization process and choosing a threshold value.
-	 * @param {number} debug		true to enable debug mode, false to disable debug mode
+	 * @param {boolean} mode		true to enable debug mode, false to disable debug mode
 	 * @see				getDebugMode()
 	 */
 	ARController.prototype.setDebugMode = function(mode) {
@@ -651,8 +651,8 @@
 
 	/**
 	 * Returns whether debug mode is currently enabled.
-	 * @return			true when debug mode is enabled, false when debug mode is disabled
-	 * @see				setDebugMode()
+	 * @return {boolean}	true when debug mode is enabled, false when debug mode is disabled
+	 * @see					setDebugMode()
 	 */
 	ARController.prototype.getDebugMode = function() {
 		return artoolkit.getDebugMode(this.id);
@@ -1287,8 +1287,8 @@
 			});
 
 		@param {string} src URL to load camera parameters from.
-		@param {string} onload Onload callback to be called on successful parameter loading.
-		@param {string} onerror Error callback to called when things don't work out.
+		@param {Function} onload Onload callback to be called on successful parameter loading.
+		@param {Function} onerror Error callback to called when things don't work out.
 	*/
 	var ARCameraParam = function(src, onload, onerror) {
 		this.id = -1;
