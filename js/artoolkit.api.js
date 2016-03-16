@@ -1287,8 +1287,8 @@
 			});
 
 		@param {string} src URL to load camera parameters from.
-		@param {string} onload Onload callback to be called on successful parameter loading.
-		@param {string} onerror Error callback to called when things don't work out.
+		@param {Function} onload Onload callback to be called on successful parameter loading.
+		@param {Function} onerror Error callback to called when things don't work out.
 	*/
 	var ARCameraParam = function(src, onload, onerror) {
 		this.id = -1;
