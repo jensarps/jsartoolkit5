@@ -255,7 +255,7 @@
 		and customizable marker widths.
 
 		@param {number} id ID of the barcode marker to track.
-		@param {number} markerWidth The width of the marker to track.
+		@param {number} [markerWidth] The width of the marker to track.
 		@return {Object} The marker tracking object.
 	*/
 	ARController.prototype.trackBarcodeMarkerId = function(id, markerWidth) {
