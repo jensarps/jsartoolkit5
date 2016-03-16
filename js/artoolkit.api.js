@@ -677,26 +677,54 @@
 		return artoolkit.setLogLevel(mode);
 	};
 
+	/**
+	 * //TODOC
+	 * @returns {*}
+	 */
 	ARController.prototype.getLogLevel = function() {
 		return artoolkit.getLogLevel();
 	};
 
+	/**
+	 * //TODOC
+	 * @param markerIndex
+	 * @param dir
+	 * @returns {*}
+	 */
 	ARController.prototype.setMarkerInfoDir = function(markerIndex, dir) {
 		return artoolkit.setMarkerInfoDir(this.id, markerIndex, dir);
 	};
 
+	/**
+	 * //TODOC
+	 * @param value
+	 * @returns {*}
+	 */
 	ARController.prototype.setProjectionNearPlane = function(value) {
 		return artoolkit.setProjectionNearPlane(this.id, value);
 	};
 
+	/**
+	 * //TODOC
+	 * @returns {*}
+	 */
 	ARController.prototype.getProjectionNearPlane = function() {
 		return artoolkit.getProjectionNearPlane(this.id);
 	};
 
+	/**
+	 * //TODOC
+	 * @param value
+	 * @returns {*}
+	 */
 	ARController.prototype.setProjectionFarPlane = function(value) {
 		return artoolkit.setProjectionFarPlane(this.id, value);
 	};
 
+	/**
+	 * //TODOC
+	 * @returns {*}
+	 */
 	ARController.prototype.getProjectionFarPlane = function() {
 		return artoolkit.getProjectionFarPlane(this.id);
 	};
