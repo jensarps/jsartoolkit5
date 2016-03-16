@@ -487,7 +487,7 @@
         detected markers are possibly examined for some measure of goodness of match (e.g. by
         examining the match confidence value) and pose extraction.
 
-		@param {image} image to be processed to detect markers.
+		@param {HTMLImageElement|HTMLVideoElement} [image] to be processed to detect markers.
 		@return {number}     0 if the function proceeded without error, or a value less than 0 in case of error.
 			A result of 0 does not however, imply any markers were detected.
 	*/
@@ -1008,7 +1008,7 @@
 	/**
 	 * //TODOC
 	 *
-	 * @param image
+	 * @param {HTMLImageElement|HTMLVideoElement} [image]
 	 * @returns {boolean}
 	 * @private
 	 */
