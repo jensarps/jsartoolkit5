@@ -642,7 +642,7 @@
 	 * Enables or disables debug mode in the tracker. When enabled, a black and white debug
 	 * image is generated during marker detection. The debug image is useful for visualising
 	 * the binarization process and choosing a threshold value.
-	 * @param {number} debug		true to enable debug mode, false to disable debug mode
+	 * @param {boolean} mode		true to enable debug mode, false to disable debug mode
 	 * @see				getDebugMode()
 	 */
 	ARController.prototype.setDebugMode = function(mode) {
@@ -651,8 +651,8 @@
 
 	/**
 	 * Returns whether debug mode is currently enabled.
-	 * @return			true when debug mode is enabled, false when debug mode is disabled
-	 * @see				setDebugMode()
+	 * @return {boolean}	true when debug mode is enabled, false when debug mode is disabled
+	 * @see					setDebugMode()
 	 */
 	ARController.prototype.getDebugMode = function() {
 		return artoolkit.getDebugMode(this.id);
